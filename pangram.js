@@ -5,9 +5,12 @@ Pangram = function(input) {
 
 
 Pangram.prototype.isPangram = function(input) {
-    if (this.input === '') {
+    if (this.input === '' || /[A-Z]/g.test(this.input) ) {
         return false;
+    } else {
+        return true;
     }
+
    
 }
 
