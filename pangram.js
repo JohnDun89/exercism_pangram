@@ -5,8 +5,9 @@ Pangram = function(input) {
 
 
 Pangram.prototype.isPangram = function () {    
-    var regex = /([a-z])(?!.*\1)/g;
-    const letterArray =(this.input.match(regex) || []);
+    const regex = /([a-z])(?!.*\1)/g;
+    const downCaseInput = this.input.toLowerCase()
+    const letterArray =(downCaseInput.match(regex) || []);
     if(letterArray.length === 26) {
         return true;
     } else {
@@ -15,20 +16,7 @@ Pangram.prototype.isPangram = function () {
     }
 
 
-    
-    Pangram.prototype.createABC = function () {
-        var abc = "abcdefghijklmnopqrstuvwxyz"
-        abc = abc.split("")
-        return abc
-     }
 
-    Pangram.prototype.checkLetter =  function (letter, arr) {
-        for (let i = 0; i <= arr.length - 1; i++) {
-            if (letter === arr[i]) {
-                arr.splice(i, 1)
-            }
-        }
-    }
 
 
 
@@ -57,3 +45,18 @@ pangram.isPangram()
 // } else {
 //     return false;
 // }
+
+
+    // Pangram.prototype.createABC = function () {
+    //     var abc = "abcdefghijklmnopqrstuvwxyz"
+    //     abc = abc.split("")
+    //     return abc
+    //  }
+
+    // Pangram.prototype.checkLetter =  function (letter, arr) {
+    //     for (let i = 0; i <= arr.length - 1; i++) {
+    //         if (letter === arr[i]) {
+    //             arr.splice(i, 1)
+    //         }
+    //     }
+    // }
